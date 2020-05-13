@@ -29,8 +29,6 @@ export default function ({ router, dom }) {
             if (event.target.matches('label')) {
                 event.stopPropagation();
             }
-        }, {
-            useCapture: true
-        });
+        }, { useCapture: true });
     });
 }
