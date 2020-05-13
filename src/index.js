@@ -12,10 +12,11 @@ export default function ({ router, dom }) {
             dom.onElementReady('.ef-main #selectAllCheckbox')
         ]);
 
-        buttons.insertAdjacentHTML('afterbegin',
-            `<button type="button" class="ui-button btn-select" title="Select all" data-tooltip="top" data-html-tooltip-title="Select all">
-                 <i class="icon-check-mark"></i>
-             </button>`);
+        buttons.insertAdjacentHTML('afterbegin', `
+            <button type="button" class="ui-button btn-select" title="Select all" data-tooltip="top" data-html-tooltip-title="Select all">
+                <i class="icon-check-mark"></i>
+            </button>
+        `);
 
         buttons.querySelector('.btn-select').addEventListener('click', () => {
             selectAllCheckbox.click();
