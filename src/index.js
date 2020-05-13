@@ -7,18 +7,21 @@ export default function ({ router, dom }) {
         'groups.files',
         'courses.files'
     ], async () => {
+        // Wait for UI elements to be available
         let [buttons, selectAllCheckbox, directory] = await Promise.all([
             dom.onElementReady('.ef-header .ef-header__secondary > .ui-buttonset'),
             dom.onElementReady('.ef-main #selectAllCheckbox'),
             dom.onElementReady('.ef-directory')
         ]);
 
+        // Insert a new button to select all files
         buttons.insertAdjacentHTML('afterbegin', `
             <button type="button" class="ui-button btn-select" title="Select all" data-tooltip="top" data-html-tooltip-title="Select all">
                 <i class="icon-check-mark"></i>
             </button>
         `);
 
+        // Check the hidden checkbox when the button is clicked
         buttons.querySelector('.btn-select').addEventListener('click', () => {
             selectAllCheckbox.click();
         });
