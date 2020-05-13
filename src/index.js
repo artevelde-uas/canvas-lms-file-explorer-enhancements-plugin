@@ -7,9 +7,10 @@ export default function ({ router, dom }) {
         'groups.files',
         'courses.files'
     ], async () => {
-        let [buttons, selectAllCheckbox] = await Promise.all([
+        let [buttons, selectAllCheckbox, directory] = await Promise.all([
             dom.onElementReady('.ef-header .ef-header__secondary > .ui-buttonset'),
-            dom.onElementReady('.ef-main #selectAllCheckbox')
+            dom.onElementReady('.ef-main #selectAllCheckbox'),
+            dom.onElementReady('.ef-directory')
         ]);
 
         buttons.insertAdjacentHTML('afterbegin', `
@@ -21,8 +22,6 @@ export default function ({ router, dom }) {
         buttons.querySelector('.btn-select').addEventListener('click', () => {
             selectAllCheckbox.click();
         });
-
-        let directory = await dom.onElementReady('.ef-directory');
 
         // Disable click handler on label element
         directory.addEventListener('click', event => {
