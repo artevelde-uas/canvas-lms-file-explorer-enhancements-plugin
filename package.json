@@ -10,8 +10,7 @@
   "repository": "https://github.com/artevelde-uas/canvas-lms-file-explorer-enhancements-plugin",
   "module": "src/index.js",
   "files": [
-    "src/index.js",
-    "src/index.css"
+    "src/"
   ],
   "peerDependencies": {
     "@artevelde-uas/canvas-lms-app": "^0.32.0"
