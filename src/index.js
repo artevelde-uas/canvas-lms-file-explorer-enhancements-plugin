@@ -1,4 +1,5 @@
 import './index.css';
+import styles from './index.module.css';
 
 
 export default function ({ router, dom }) {
@@ -7,6 +8,9 @@ export default function ({ router, dom }) {
         'groups.files',
         'courses.files'
     ], async () => {
+        // Make the file view full height
+        document.body.classList.add(styles.fullHeight);
+
         // Wait for UI elements to be available
         let [buttons, selectAllCheckbox, directory] = await Promise.all([
             dom.onElementReady('.ef-header .ef-header__secondary > .ui-buttonset'),

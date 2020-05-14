@@ -1,0 +1,12 @@
+.fullHeight :global(#main),
+.fullHeight :global(#content-wrapper),
+.fullHeight :global(#content),
+.fullHeight :global(#content) > div {
+    display: flex;
+}
+.fullHeight :global(#content) > div {
+    flex-direction: column;
+}
+.fullHeight :global(#content) > div > :global(.ef-main) {
+    flex-grow: 1;
+}
