@@ -19,7 +19,7 @@ export default function ({ router, dom }) {
             <button type="button" class="ui-button btn-select" title="Select all" data-tooltip="top" data-html-tooltip-title="Select all">
                 <i class="icon-check-mark"></i>
             </button>
-        `);
+        `.trim());
 
         // Check the hidden checkbox when the button is clicked
         buttons.querySelector('.btn-select').addEventListener('click', () => {
