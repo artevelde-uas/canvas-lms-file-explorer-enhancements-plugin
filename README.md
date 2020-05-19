@@ -1,5 +1,9 @@
 # File Explorer Enhancements Plug-in
 
+[![](https://img.shields.io/npm/v/@artevelde-uas/canvas-lms-file-explorer-enhancements-plugin.svg)](https://www.npmjs.com/package/@artevelde-uas/canvas-lms-file-explorer-enhancements-plugin)
+[![](https://img.shields.io/github/license/artevelde-uas/canvas-lms-file-explorer-enhancements-plugin.svg)](https://spdx.org/licenses/MIT)
+[![](https://img.shields.io/npm/dt/@artevelde-uas/canvas-lms-file-explorer-enhancements-plugin.svg)](https://www.npmjs.com/package/@artevelde-uas/canvas-lms-file-explorer-enhancements-plugin)
+
 Plug-in for the [Canvas LMS theme app](https://github.com/artevelde-uas/canvas-lms-app) that adds some enhancements to the file explorer.
 
 ## Installation
