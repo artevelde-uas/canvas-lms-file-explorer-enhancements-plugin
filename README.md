@@ -6,6 +6,19 @@
 
 Plug-in for the [Canvas LMS theme app](https://github.com/artevelde-uas/canvas-lms-app) that adds some enhancements to the file explorer.
 
+## Features
+
+  * Always shows the action bar
+  * Adds a 'select all' button to the action bar
+  * Changes the row selection to a more intuitive style with select boxes (like Windows Explorer)
+  * Moves the status bar down so you have the full height of the window to your disposal
+
+#### Before:
+![Example image](docs/files-before.png)
+
+#### After:
+![Example image](docs/files-after.png)
+
 ## Installation
 
 Using NPM:
