@@ -18,18 +18,30 @@ export default function ({ router, dom }) {
             dom.onElementReady('.ef-directory')
         ]);
 
-        // Insert a new button to select all files
-        buttons.insertAdjacentHTML('afterbegin', `
-            <button type="button" class="ui-button btn-select" title="Select all" data-tooltip="top" data-html-tooltip-title="Select all">
-                <i class="icon-check-mark"></i>
-            </button>
-        `.trim());
 
-        // Check the hidden checkbox when the button is clicked
-        buttons.querySelector('.btn-select').addEventListener('click', () => {
-            selectAllCheckbox.click();
+        // Add a 'Select all' checkbox
+        dom.onElementReady('header.ef-directory-header').then(directoryHeader => {
+            const selectAll = directoryHeader.firstElementChild;
+
+            selectAll.classList.remove('screenreader-only');
+            selectAll.classList.add(styles.selectAll);
+
+            selectAll.addEventListener('click', () => {
+                selectAllCheckbox.click();
+            });
         });
 
+        // Wait for selected count label
+        dom.onElementReady('.ef-selected-count').then(selectCount => {
+            dom.onTextContentChange(selectCount, () => {
+                const selectAll = directory.querySelector('header.ef-directory-header').firstElementChild;
+                const count = directory.querySelectorAll('.ef-item-row').length;
+                const selectedCount = directory.querySelectorAll('.ef-item-row.ef-item-selected').length;
+
+                selectAll.classList.toggle(styles.selected, selectedCount === count);
+            });
+        });
+        
         // Disable click handler on label element
         directory.addEventListener('click', event => {
             if (event.target.matches('label')) {
