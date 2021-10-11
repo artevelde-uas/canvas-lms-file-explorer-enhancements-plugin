@@ -14,3 +14,50 @@
 .fullHeight :global(#content) > div > :global(.ef-main) {
     flex-grow: 1;
 }
+
+:global(.btn-view[disabled]),
+:global(.btn-view:not([disabled])) + #view-button-shim {
+    display: none;
+}
+:global(.btn-view:first-child[disabled]) + #view-button-shim {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#download-button-shim {}
+
+:global(.ef-directory-header) {
+    position: relative;
+    padding-left: 24px;
+}
+:global(.ef-directory-header) > .select-all {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    padding-left: 24px;
+    clip: rect(0, 24px, auto, 0);
+}
+:global(.ef-directory-header) > .select-all::before {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 4px;
+    width: 16px !important;
+    height: 16px !important;
+    margin-top: -8px;
+    background: no-repeat center bottom white url('./ic-checkbox-bg.svg') !important;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: #d8e0e6;
+}
+:global(.ef-directory-header) > .select-all:hover::before {
+    border-color: var(--ic-brand-primary);
+}
+:global(.ef-directory-header) > .select-all.selected::before {
+    background-color: var(--ic-brand-primary) !important;
+    background-position: center -1px !important;
+    border-color: var(--ic-brand-primary);
+}

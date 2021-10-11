@@ -18,6 +18,48 @@ export default function ({ router, dom }) {
             dom.onElementReady('.ef-directory')
         ]);
 
+        // Wait for view button
+        dom.onElementReady('.btn-view').then(viewButton => {
+            viewButton.insertAdjacentHTML('afterend', `
+                <button type="button" class="ui-button" id="${styles.viewButtonShim}" disabled>
+                    <i class="icon-eye"></i>
+                </button>
+            `.trim());
+        });
+
+        // Wait for 'Manage access' button
+        dom.onElementReady('.btn-restrict').then(restrictButton => {
+            /** Adds a temporary download button */
+            function insertDownloadButtonShim() {
+                restrictButton.insertAdjacentHTML('afterend', `
+                    <button type="button" class="ui-button" id="${styles.downloadButtonShim}" disabled>
+                        <i class="icon-download"></i>
+                    </button>
+                `.trim());
+            }
+
+            // Add the temporary download button
+            insertDownloadButtonShim();
+            
+            // When the real button is added ...
+            dom.onElementAdded('.btn-download', el => {
+                // ... remove the temporary download
+                document.getElementById(styles.downloadButtonShim).remove();
+            }, { root: buttons });
+
+            // When the real button is removed ...
+            dom.onElementRemoved('.btn-download', el => {
+                // ... add the temporary download button again
+                insertDownloadButtonShim();
+            }, { root: buttons });
+        });
+
+        // Disable click handler on label element
+        directory.addEventListener('click', event => {
+            if (event.target.matches('label')) {
+                event.stopPropagation();
+            }
+        }, { useCapture: true });
 
         // Add a 'Select all' checkbox
         dom.onElementReady('header.ef-directory-header').then(directoryHeader => {
@@ -42,11 +84,5 @@ export default function ({ router, dom }) {
             });
         });
         
-        // Disable click handler on label element
-        directory.addEventListener('click', event => {
-            if (event.target.matches('label')) {
-                event.stopPropagation();
-            }
-        }, { useCapture: true });
     });
 }
