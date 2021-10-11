@@ -1,15 +1,7 @@
 
 .ef-header__secondary > .ui-buttonset.screenreader-only,
 .ef-item-row > label.screenreader-only {
-    position: unset;
-    width: unset;
-    height: unset;
-    margin: unset;
-    padding: unset;
-    clip: unset;
-    overflow: unset;
-    border: unset;
-    transform: unset;
+    all: unset;
 }
 
 .ef-search-form {
