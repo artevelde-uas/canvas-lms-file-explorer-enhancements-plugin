@@ -1,8 +1,10 @@
+import { router, dom } from '@artevelde-uas/canvas-lms-app';
+
 import './index.css';
 import styles from './index.module.css';
 
 
-export default function ({ router, dom }) {
+export default function () {
     router.onRoute([
         'profile.files',
         'groups.files',
@@ -83,6 +85,7 @@ export default function ({ router, dom }) {
                 selectAll.classList.toggle(styles.selected, selectedCount === count);
             });
         });
-        
     });
+    
+    return require('../package.json');
 }
