@@ -14,7 +14,7 @@ export default function () {
         document.body.classList.add(styles.fullHeight);
 
         // Wait for UI elements to be available
-        let [buttons, selectAllCheckbox, directory] = await Promise.all([
+        const [buttons, selectAllCheckbox, directory] = await Promise.all([
             dom.onElementReady('.ef-header .ef-header__secondary > .ui-buttonset'),
             dom.onElementReady('.ef-main #selectAllCheckbox'),
             dom.onElementReady('.ef-directory')
