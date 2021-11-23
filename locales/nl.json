@@ -1,4 +1,5 @@
 {
+    "select_all": "Selecteer alles",
     "package": {
         "title": "Verbeteringen bestandsverkenner",
         "description": "Brengt verbeteringen aan in de bestandsverkenner (gebruikersbestanden en cursusbestanden)"

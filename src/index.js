@@ -72,6 +72,8 @@ export default function () {
             selectAll.classList.remove('screenreader-only');
             selectAll.classList.add(styles.selectAll);
 
+            selectAll.title = __('select_all');
+
             selectAll.addEventListener('click', () => {
                 selectAllCheckbox.click();
             });

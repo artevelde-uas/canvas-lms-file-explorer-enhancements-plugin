@@ -1,4 +1,5 @@
 {
+    "select_all": "Select all",
     "package": {
         "title": "File explorer enhancements",
         "description": "Adds some enhancements to the file explorer (user files and course files)"
