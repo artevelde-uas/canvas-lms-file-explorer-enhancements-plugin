@@ -1,11 +1,11 @@
 {
   "name": "@artevelde-uas/canvas-lms-file-explorer-enhancements-plugin",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Adds some enhancements to the file explorer",
   "keywords": [
     "Canvas LMS"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "author": "Renaat De Muynck <renaat.demuynck@arteveldehs.be>",
   "repository": "https://github.com/artevelde-uas/canvas-lms-file-explorer-enhancements-plugin",
   "module": "src/index.js",
