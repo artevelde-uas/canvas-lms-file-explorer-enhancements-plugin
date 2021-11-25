@@ -1,6 +1,6 @@
 {
   "name": "@artevelde-uas/canvas-lms-file-explorer-enhancements-plugin",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Adds some enhancements to the file explorer",
   "keywords": [
     "Canvas LMS"
