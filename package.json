@@ -16,6 +16,6 @@
     "docs/"
   ],
   "peerDependencies": {
-    "@artevelde-uas/canvas-lms-app": "^0.32.0"
+    "@artevelde-uas/canvas-lms-app": "^1.0.0"
   }
 }
