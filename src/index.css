@@ -1,15 +1,7 @@
 
 .ef-header__secondary > .ui-buttonset.screenreader-only,
 .ef-item-row > label.screenreader-only {
-    position: unset;
-    width: unset;
-    height: unset;
-    margin: unset;
-    padding: unset;
-    clip: unset;
-    overflow: unset;
-    border: unset;
-    transform: unset;
+    all: unset;
 }
 
 .ef-search-form {
@@ -28,6 +20,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 0;
     height: 100%;
     padding-left: 24px;
     clip: rect(0, 24px, auto, 0);
@@ -40,7 +33,7 @@
     width: 16px !important;
     height: 16px !important;
     margin-top: -8px;
-    background: no-repeat center bottom white url('./ic-checkbox-bg.svg') !important;
+    background: no-repeat center bottom white url('../assets/ic-checkbox-bg.svg') !important;
     border: 1px solid;
     border-radius: 3px;
 }
