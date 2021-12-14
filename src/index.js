@@ -73,6 +73,12 @@ export default function () {
             selectAll.classList.add(styles.selectAll);
 
             selectAll.title = __('select_all');
+            
+            // Add a tooltip
+            jQuery(selectAll).tooltip({
+                position: { my: 'bottom', at: 'top' },
+                tooltipClass: 'center bottom vertical'
+            });
 
             selectAll.addEventListener('click', () => {
                 selectAllCheckbox.click();
