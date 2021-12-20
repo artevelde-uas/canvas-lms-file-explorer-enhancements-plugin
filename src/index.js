@@ -2,7 +2,6 @@ import { router, dom } from '@artevelde-uas/canvas-lms-app';
 
 import __ from './i18n';
 
-import './index.css';
 import styles from './index.module.css';
 
 
@@ -13,7 +12,7 @@ export default function () {
         'courses.files'
     ], async () => {
         // Make the file view full height
-        document.body.classList.add(styles.fullHeight);
+        document.body.classList.add(styles.fileExplorerEnhancements);
 
         // Wait for UI elements to be available
         const [buttons, selectAllCheckbox, directory] = await Promise.all([
