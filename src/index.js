@@ -43,7 +43,7 @@ export default function () {
 
             // Add the temporary download button
             insertDownloadButtonShim();
-            
+
             // When the real button is added ...
             dom.onElementAdded('.btn-download', el => {
                 // ... remove the temporary download
@@ -69,14 +69,14 @@ export default function () {
         }, { useCapture: true });
 
         // Add a 'Select all' checkbox
-        dom.onElementReady('header.ef-directory-header').then(directoryHeader => {
+        dom.onElementAdded('header.ef-directory-header', directoryHeader => {
             const selectAll = directoryHeader.querySelector('.ef-select-col > span:first-child');
 
             selectAll.classList.remove('screenreader-only');
             selectAll.classList.add(styles.selectAll);
 
             selectAll.title = __('select_all');
-            
+
             // Add a tooltip
             jQuery(selectAll).tooltip({
                 position: { my: 'bottom', at: 'top' },
@@ -99,7 +99,7 @@ export default function () {
             });
         });
     });
-    
+
     return {
         ...require('../package.json'),
         title: __('package.title'),
