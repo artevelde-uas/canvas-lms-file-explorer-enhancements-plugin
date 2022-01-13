@@ -66,7 +66,7 @@ export default function () {
 
         // Add a 'Select all' checkbox
         dom.onElementReady('header.ef-directory-header').then(directoryHeader => {
-            const selectAll = directoryHeader.firstElementChild;
+            const selectAll = directoryHeader.querySelector('.ef-select-col > span:first-child');
 
             selectAll.classList.remove('screenreader-only');
             selectAll.classList.add(styles.selectAll);
@@ -87,7 +87,7 @@ export default function () {
         // Wait for selected count label
         dom.onElementReady('.ef-selected-count').then(selectCount => {
             dom.onTextContentChange(selectCount, () => {
-                const selectAll = directory.querySelector('header.ef-directory-header').firstElementChild;
+                const selectAll = directory.querySelector('header.ef-directory-header .ef-select-col');
                 const count = directory.querySelectorAll('.ef-item-row').length;
                 const selectedCount = directory.querySelectorAll('.ef-item-row.ef-item-selected').length;
 
