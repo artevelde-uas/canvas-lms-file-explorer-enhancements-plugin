@@ -47,7 +47,11 @@ export default function () {
             // When the real button is added ...
             dom.onElementAdded('.btn-download', el => {
                 // ... remove the temporary download
-                document.getElementById(styles.downloadButtonShim).remove();
+                const downloadButtonShim = document.getElementById(styles.downloadButtonShim);
+
+                if (downloadButtonShim === null) return;
+
+                downloadButtonShim.remove();
             }, { root: buttons });
 
             // When the real button is removed ...
