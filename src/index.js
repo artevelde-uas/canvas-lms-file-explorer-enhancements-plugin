@@ -11,15 +11,18 @@ export default function () {
         'groups.files',
         'courses.files'
     ], async () => {
-        // Make the file view full height
         document.body.classList.add(styles.fileExplorerEnhancements);
 
         // Wait for UI elements to be available
-        const [buttons, selectAllCheckbox, directory] = await Promise.all([
+        const [buttons, selectAllCheckbox, folderList, directory] = await Promise.all([
             dom.onElementReady('.ef-header .ef-header__secondary > .ui-buttonset'),
             dom.onElementReady('.ef-main #selectAllCheckbox'),
+            dom.onElementReady('.ef-folder-list'),
             dom.onElementReady('.ef-directory')
         ]);
+
+        // Use thin scrollbars on the folder list
+        folderList.classList.add(styles.thinScrollbar);
 
         // Wait for view button
         dom.onElementReady('.btn-view').then(viewButton => {
